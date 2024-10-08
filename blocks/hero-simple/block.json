@@ -1,0 +1,20 @@
+{
+    "name": "acf/hero-simple",
+    "title": "Hero Simple",
+    "description": "A custom testimonial block that uses ACF fields.",
+    "style": [
+        "file:./hero-simple.scss"
+    ],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": [
+        "hero"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "hero-simple.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

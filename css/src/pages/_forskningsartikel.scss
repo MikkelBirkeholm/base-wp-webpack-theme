@@ -1,0 +1,145 @@
+.article {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media screen and (min-width: 900px) {
+        grid-template-columns: 1.5fr 1fr;
+    }
+
+    gap: 100px;
+    width: clamp(20px, 1300px, 90vw);
+    margin: 0 auto;
+
+    h1 {
+        font-size: 2rem;
+        white-space: balance;
+        color: var(--color-text);
+        max-width: 20ch;
+    }
+
+    hr {
+        border: 1px solid var(--color-green-faded);
+        width: 50%;
+    }
+
+    details {
+        sup {
+            font-weight: bold;
+            padding-right: 0.5rem;
+        }
+
+        &[open] {
+            border-bottom: 1px solid var(--color-green);
+
+            summary {
+                color: var(--color-green);
+            }
+        }
+
+        summary {
+            cursor: pointer;
+            color: var(--color-green-faded);
+        }
+    }
+
+    .details:has(:not(ul, ol)) div {
+        padding: 0 1rem;
+    }
+
+
+    .details:has(ul, ol) p {
+        display: none;
+    }
+
+    .details ol,
+    .details ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+        margin: 0;
+        list-style-type: none;
+        list-style-position: inside;
+    }
+
+    ul {
+        list-style: inside;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .type {
+        background-color: var(--color-green-faded);
+        color: white;
+        font-weight: bold;
+        padding: 4px 1rem;
+        border-radius: 3px;
+        text-align: center;
+        width: fit-content;
+        font-size: 14px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .abstract {
+            p {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    &__sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 0;
+
+        @media screen and (min-width: 900px) {
+            padding-left: 2rem;
+        }
+
+        h2 {
+            font-size: 28px;
+        }
+
+        hr {
+            border: 1px solid var(--color-green-faded);
+            width: 50%;
+        }
+
+        .info-list {
+            list-style: none;
+
+            .item {
+                font-weight: bold;
+            }
+        }
+
+        .original_date {
+            font-size: 12px;
+        }
+
+        .box {
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 40px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            &.fertin {
+                align-items: center;
+                justify-content: center;
+
+                a {
+                    width: 50%;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}

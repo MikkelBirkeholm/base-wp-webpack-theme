@@ -1,0 +1,22 @@
+{
+    "name": "acf/latest-news",
+    "title": "Forskningsartikler (Seneste)",
+    "description": "A custom testimonial block that uses ACF fields.",
+    "style": [
+        "file:./latest-news.scss"
+    ],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": [
+        "query",
+        "news",
+        "forskning"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "latest-news.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

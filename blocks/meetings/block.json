@@ -1,0 +1,20 @@
+{
+    "name": "acf/meetings",
+    "title": "Møder",
+    "description": "A custom testimonial block that uses ACF fields.",
+    "style": [
+        "file:./meetings.scss"
+    ],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": [
+        "møder"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "meetings.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

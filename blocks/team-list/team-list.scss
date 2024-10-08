@@ -1,0 +1,27 @@
+.team__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    width: clamp(20px, 1300px, 90vw);
+    margin: 0 auto;
+}
+
+.team__member__image {
+    margin-bottom: 1rem;
+
+    img {
+        aspect-ratio: 2 / 3;
+        object-fit: cover;
+        object-position: top;
+    }
+}
+
+.team__member__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .member-role {
+        color: var(--color-green-faded);
+    }
+}

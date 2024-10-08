@@ -1,0 +1,32 @@
+.media-text__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5rem;
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.media-text {
+    padding: 5rem 0;
+
+    .media-text__content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+    }
+
+    .media-text__preheader {
+        color: var(--color-green-faded);
+    }
+
+    hr {
+        width: 50%;
+        background-color: var(--color-green-faded);
+        height: 2px;
+        border: none;
+    }
+
+}

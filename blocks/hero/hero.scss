@@ -1,0 +1,41 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: max(600px, 30vh);
+    display: flex;
+    align-items: center;
+    background-color: var(--color-light-gray);
+    margin-bottom: 3rem;
+
+
+    .hero__content {
+        width: var(--inner-content-width);
+        margin: 0 auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        z-index: 1;
+        color: var(--color-text);
+        border-left: 1px solid var(--color-green-faded);
+        padding-left: 2rem;
+
+        &::before {
+            content: '';
+            display: block;
+            background-color: red;
+            height: 100%;
+            width: 2px;
+        }
+    }
+
+    .hero__preheader {
+        font-size: clamp(1rem, 1rem + 2vw, 2.25rem);
+        line-height: 1;
+    }
+
+    .hero__heading {
+        white-space: balance;
+        max-width: 20ch;
+    }
+}

@@ -1,0 +1,80 @@
+.main-nav {
+    .menu-container {
+        .menu {
+            display: flex;
+            flex-flow: row wrap;
+
+            .sub-menu {
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .menu-item {
+                position: relative;
+                padding: 10px;
+                margin: 10px;
+                width: fit-content;
+
+                a {
+                    color: var(--color-green-faded);
+                    text-decoration: none;
+                    position: relative;
+                    white-space: nowrap;
+
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        left: 100%;
+                        right: 100%;
+                        bottom: -4px;
+                        height: 2px;
+                        pointer-events: none;
+                        background: currentColor;
+                        transition:
+                            right 0s 0.35s,
+                            left 0.35s;
+                    }
+
+                    @media screen and (min-width: 768px) {
+                        &:hover {
+                            &:before {
+                                left: 0;
+                                right: 0;
+                                transition:
+                                    left 0s,
+                                    right 0.35s;
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        color: var(--color-green);
+                    }
+                }
+
+                &:hover,
+                &:focus-within {
+                    >ul {
+                        opacity: 1;
+                        pointer-events: all;
+                    }
+                }
+
+                ul {
+                    opacity: 0;
+                    pointer-events: none;
+                    position: absolute;
+                    right: 0;
+                    background-color: white;
+                    z-index: 20;
+                }
+            }
+        }
+    }
+}
+
+.mobile-nav {
+
+    .nav-wrapper {
+        height: 100%;
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "name": "acf/boxes",
+    "title": "Boxes",
+    "description": "A custom testimonial block that uses ACF fields.",
+    "style": [
+        "file:./boxes.module.scss"
+    ],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": [
+        "boxes",
+        "links"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "boxes.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

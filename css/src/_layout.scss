@@ -1,0 +1,50 @@
+html {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  color: var(--color-text);
+}
+
+.dskc-artikel {
+  width: clamp(20px, 1300px, 90vw);
+  margin: 0 auto;
+}
+
+.animate {
+  transform: translateY(1rem);
+  animation: animateUp 500ms ease-in-out forwards;
+  opacity: 0;
+}
+
+
+@for $i from 1 through 10 {
+  .delay-#{$i} {
+    animation-delay: #{$i * 0.15}s;
+  }
+}
+
+@keyframes animateUp {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wp-block-columns {
+    padding: 2rem !important;
+  }
+}

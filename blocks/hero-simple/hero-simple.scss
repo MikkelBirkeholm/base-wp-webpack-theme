@@ -1,0 +1,36 @@
+.simple-hero {
+    position: relative;
+    width: 100%;
+    // height: max(400px, 25vh);
+    padding: 5rem 0;
+    display: flex;
+    text-wrap: balance;
+
+    color: var(--color-text);
+
+    hr {
+        width: 50%;
+        background-color: var(--color-green);
+        height: 2px;
+        margin: 0;
+        outline: none;
+        border: none;
+
+    }
+
+    .simple-hero__content {
+        width: var(--inner-content-width);
+        margin: 0 auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        max-inline-size: 70ch;
+        gap: 1rem;
+        z-index: 1;
+    }
+
+
+}

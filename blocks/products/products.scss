@@ -1,0 +1,118 @@
+.product__list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-x: scroll;
+    gap: 10px;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+
+    /* Firefox */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    @media screen and (width < 850px) {
+        padding: 1rem 0;
+    }
+
+    >div {
+        @media screen and (width < 850px) {
+            span {
+                min-width: 100px;
+            }
+
+            &:not(:focus-within, :hover) {
+                span {
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    flex: 1;
+                }
+            }
+
+            >span:first-of-type {
+                text-wrap: balance;
+                position: sticky;
+                left: 0;
+                min-width: 25vw;
+                flex: 1;
+            }
+        }
+    }
+}
+
+.product__list__headings {
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+
+    @media screen and (width < 850px) {
+        span:not(:focus-within, :hover) {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            flex: 1;
+        }
+    }
+
+    >span {
+        flex: 1;
+        padding: 1rem;
+        background-color: white;
+    }
+
+    .product-title {
+        flex: 2;
+        color: var(--color-green-faded);
+        background-color: white;
+    }
+
+}
+
+.product {
+    display: flex;
+    flex-direction: row;
+    box-shadow: var(--box-shadow);
+    width: 100%;
+
+    &:nth-child(even) {
+        span {
+            background-color: white;
+
+        }
+    }
+
+    &:nth-child(odd) {
+        span {
+            background-color: var(--color-light-gray);
+
+        }
+    }
+
+    &:hover,
+    &:focus-within {
+        span {
+            background-color: var(--color-green-faded);
+            color: white;
+
+            &:first-of-type {
+                width: 15ch;
+            }
+        }
+    }
+
+    >span {
+        flex: 1;
+        padding: 1rem;
+    }
+
+    .product-title {
+        flex: 2;
+
+    }
+}
