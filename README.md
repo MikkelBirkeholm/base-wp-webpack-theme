@@ -5,6 +5,11 @@
 - Run `npm install` to install dependencies
 - Update theme.json with your theme information and settings
 
+## BrowserSync
+
+- Setup a site in Local
+- Update `proxy` in `webpack.config.js` with your Local site URL
+
 ## Deploy to FTP
 
 - Create .env with the following content:
