@@ -1,0 +1,29 @@
+{
+  "name": "acf/demo-block",
+  "title": "Demo Block",
+  "description": "A custom ACF block",
+  "style": [
+    "file:./demo-block.scss"
+  ],
+  "category": "formatting",
+  "icon": {
+    "src": "shortcode",
+    "background": "#29f29f",
+    "foreground": "#000"
+  },
+  "keywords": [
+    "Demo Block"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "demo-block.php"
+  },
+  "supports": {
+    "anchor": true,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "layout": true
+  }
+}

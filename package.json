@@ -5,14 +5,16 @@
   "main": "js/build/main.js",
   "scripts": {
     "build": "webpack --mode development",
-    "dist": "webpack --mode production && node deploy",
+    "dist": "webpack --mode production",
     "watch": "webpack --watch --mode development",
-    "deploy": "node deploy"
+    "deploy": "node deploy",
+    "createblock": "node createBlock.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/tcallsen/wp-barebone-theme-webpack5-sass.git"
   },
+  "type": "module",
   "author": "Mikkel Birkeholm",
   "license": "ISC",
   "devDependencies": {
@@ -29,5 +31,8 @@
     "sass-loader": "^13.3.2",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.0.0"
   }
 }
