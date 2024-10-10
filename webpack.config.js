@@ -38,10 +38,10 @@ module.exports = [
           },
         },
         {
-          test: /\.(png|jpg|gif)$/,
+          test: /\.(png|jpg|gif|svg)$/,
           type: 'asset/resource',
           generator: {
-            filename: './css/build/img/[name][ext]',
+            filename: './css/build/images/[name][ext]',
           },
         },
       ],
@@ -53,7 +53,6 @@ module.exports = [
       new MiniCssExtractPlugin({
         filename: './css/build/main.min.[fullhash].css',
       }),
-      // Uncomment this if you want to use CSS Live reload
       new BrowserSyncPlugin(
         {
           proxy: '', // Set site domain from Local here (e.g. website.local)

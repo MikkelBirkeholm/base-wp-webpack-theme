@@ -1,8 +1,9 @@
 <?php
  // Enqueue functions
-  require 'functions/navigation.php';
-  require 'functions/blocks.php';
-  require 'functions/supports.php';
+  require 'functions/functions-navigation.php';
+  require 'functions/functions-blocks.php';
+  require 'functions/functions-supports.php';
+  require 'functions/functions-security.php';
 
   // register webpack compiled js and css with theme
   function enqueue_webpack_scripts() {
