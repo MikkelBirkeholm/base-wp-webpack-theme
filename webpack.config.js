@@ -55,7 +55,7 @@ module.exports = [
       }),
       new BrowserSyncPlugin(
         {
-          proxy: '', // Set site domain from Local here (e.g. website.local)
+          proxy: 'base-theme.local', // Set site domain from Local here (e.g. website.local)
           files: [
             './css/build/style.min.css',
             './js/build/main.min.js',

@@ -18,17 +18,11 @@ body {
   color: var(--color-text);
 }
 
-.dskc-artikel {
-  width: clamp(20px, 1300px, 90vw);
-  margin: 0 auto;
-}
-
 .animate {
   transform: translateY(1rem);
   animation: animateUp 500ms ease-in-out forwards;
   opacity: 0;
 }
-
 
 @for $i from 1 through 10 {
   .delay-#{$i} {

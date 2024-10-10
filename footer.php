@@ -1,1 +1,1 @@
- <?php get_template_part( 'parts/parts', 'footer' ); ?>
+ <?php get_template_part( 'partials/partials', 'footer' ); ?>
