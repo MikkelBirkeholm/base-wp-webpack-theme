@@ -153,6 +153,7 @@ function slugify(text) {
 /**
  * Block: ${blockNameInput}
  */
+        $id = $block['id'];
 ?>
 <div class="${blockName}">
   <!-- Block content goes here -->

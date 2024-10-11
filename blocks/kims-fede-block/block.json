@@ -1,0 +1,29 @@
+{
+  "name": "acf/kims-fede-block",
+  "title": "Kims Fede Block",
+  "description": "A custom ACF block",
+  "style": [
+    "file:./kims-fede-block.scss"
+  ],
+  "category": "formatting",
+  "icon": {
+    "src": "media-code",
+    "background": "#29f29f",
+    "foreground": "#000"
+  },
+  "keywords": [
+    "Kims Fede Block"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "kims-fede-block.php"
+  },
+  "supports": {
+    "anchor": true,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "layout": true
+  }
+}

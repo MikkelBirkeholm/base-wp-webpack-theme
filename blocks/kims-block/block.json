@@ -1,0 +1,29 @@
+{
+  "name": "acf/kims-block",
+  "title": "Kims block",
+  "description": "A custom ACF block",
+  "style": [
+    "file:./kims-block.scss"
+  ],
+  "category": "formatting",
+  "icon": {
+    "src": "admin-menu",
+    "background": "#29f29f",
+    "foreground": "#000"
+  },
+  "keywords": [
+    "Kims block"
+  ],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "kims-block.php"
+  },
+  "supports": {
+    "anchor": true,
+    "align": [
+      "wide",
+      "full"
+    ],
+    "layout": true
+  }
+}

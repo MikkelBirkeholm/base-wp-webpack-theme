@@ -1,23 +1,29 @@
-const path = require('path')
+import { resolve } from 'path'
 
 // css extraction and minification
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 
 // clean out build dir in-between builds
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+import { CleanWebpackPlugin } from 'clean-webpack-plugin'
+
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url) // get the resolved path to the file
+const __dirname = path.dirname(__filename) // get the name of the directory
 
 // BrowserSync for live reload
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+import BrowserSyncPlugin from 'browser-sync-webpack-plugin'
 
-module.exports = [
+export default [
   {
     entry: {
       main: ['./js/src/main.js', './css/src/main.scss'],
     },
     output: {
       filename: './js/build/[name].min.[fullhash].js',
-      path: path.resolve(__dirname),
+      path: resolve(__dirname),
     },
     module: {
       rules: [
