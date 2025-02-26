@@ -1,0 +1,1 @@
+.responsive-spacer{height:var(--mobile-height);visibility:hidden;width:100%}@media(min-width:992px){.responsive-spacer{height:var(--tablet-height)}}@media(min-width:1200px){.responsive-spacer{height:var(--desktop-height)}}

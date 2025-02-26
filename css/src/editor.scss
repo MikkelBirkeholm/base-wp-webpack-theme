@@ -1,0 +1,88 @@
+@import './general/mixins';
+
+.block-editor {
+  // Spacing controller
+
+  .wp-block-acf-responsive-spacer {
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.03);
+
+    &:after {
+      content: 'Responsive Spacer';
+    }
+  }
+
+  .wp-block-spacer {
+    display: block;
+    > div {
+      position: relative;
+      z-index: 4;
+      border: 2px solid rgba(0, 0, 0, 0.3);
+      transition: background 0.2s;
+
+      &:after {
+        content: 'Spacer';
+        font-family: 'Arial', sans-serif;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        height: 20px;
+        opacity: 0.2;
+        transition: opacity 0.2s;
+      }
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.5);
+
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+
+    &.is-style {
+      &-spacer-mobile {
+        > div {
+          &:after {
+            content: 'Spacer Mobile/Tablet';
+          }
+        }
+      }
+
+      &-spacer-desktop {
+        > div {
+          &:after {
+            content: 'Spacer Desktop';
+          }
+        }
+      }
+    }
+  }
+}
+
+.edit-post-visual-editor__post-title-wrapper h1 {
+  white-space: pre-wrap;
+  min-width: 1px;
+  font-size: 15px;
+  background: #f5f5f5;
+  color: #222;
+  padding: 20px;
+  font-weight: normal;
+  position: relative;
+}
+.edit-post-visual-editor__post-title-wrapper h1:before {
+  content: 'Internal title';
+  position: absolute;
+  font-size: 9px;
+  line-height: 14px;
+  background-color: #111;
+  color: #ccc;
+  text-transform: uppercase;
+  top: -7px;
+  display: block;
+  letter-spacing: 2px;
+  padding: 0 5px;
+  font-weight: normal;
+}

@@ -6,9 +6,16 @@
   --color-green: #0a610a;
   --color-gray-border: #e7e5df;
   --color-light-gray: #f9f9f9;
-  --inner-content-width: clamp(20px, 1600px, 90vw);
+  // --inner-content-width: clamp(20px, 1600px, 90vw);
   --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
   --headings-font: 'Poppins', sans-serif;
   --body-font: 'Poppins', sans-serif;
+
+  --content-width: clamp(20px, var(--wp--style--global--content-size), 90vw);
+  --content-width-wide: clamp(20px, var(--wp--style--global--wide-size), 90vw);
+  --content-width-full: clamp(20px, 100%, 100vw);
+  --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  --radius: 20px;
 }

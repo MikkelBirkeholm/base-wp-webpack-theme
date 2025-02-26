@@ -1,22 +1,22 @@
 {
-  "name": "acf/kims-block",
-  "title": "Kims block",
-  "description": "A custom ACF block",
+  "name": "acf/responsive-spacer",
+  "title": "Responsive Spacer",
+  "description": "A custom block",
   "style": [
-    "file:./kims-block.scss"
+    "file:./responsive-spacer.min.css"
   ],
   "category": "formatting",
   "icon": {
-    "src": "admin-menu",
+    "src": "insert-after",
     "background": "#29f29f",
     "foreground": "#000"
   },
   "keywords": [
-    "Kims block"
+    "Responsive Spacer"
   ],
   "acf": {
     "mode": "preview",
-    "renderTemplate": "kims-block.php"
+    "renderTemplate": "responsive-spacer.php"
   },
   "supports": {
     "anchor": true,

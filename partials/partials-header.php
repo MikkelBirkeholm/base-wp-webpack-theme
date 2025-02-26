@@ -1,4 +1,7 @@
-<div class="site-header">
+<?php 
+    $header_width = get_field('header_width', 'option') ?: 'none';
+?>
+<div class="site-header <?= $header_width ?>">
     <?php get_template_part( 'partials/header/header', 'logo' ); ?>
     <div class="main-nav">
         <?php get_template_part( 'partials/header/header', 'nav' ); ?>

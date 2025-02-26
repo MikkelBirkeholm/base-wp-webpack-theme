@@ -1,0 +1,45 @@
+@mixin media($breakpoint) {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+// ------- Mixins
+$breakpoints: (
+  'small': (
+    min-width: 637px,
+  ),
+  'small-down': (
+    max-width: 636px,
+  ),
+  'medium': (
+    min-width: 992px,
+  ),
+  'medium-down': (
+    max-width: 992px,
+  ),
+  'large': (
+    min-width: 1200px,
+  ),
+  'large-down': (
+    max-width: 1200px,
+  ),
+  'mobile': (
+    max-width: 639px,
+  ),
+);
+
+@mixin responsive($name) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $name) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $name))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. ";
+  }
+}

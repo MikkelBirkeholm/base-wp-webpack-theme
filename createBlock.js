@@ -153,9 +153,13 @@ function slugify(text) {
 /**
  * Block: ${blockNameInput}
  */
-        $id = $block['id'];
+    $id = $block['id'];
+    
+    if($block['align']) {
+      $classes .= ' align' . $block['align'];
+    }
 ?>
-<div class="${blockName}">
+<div class="${blockName} <?= $classes; ?>">
   <!-- Block content goes here -->
 </div>
 `
@@ -175,9 +179,9 @@ function slugify(text) {
       `{
   "name": "acf/${blockName}",
   "title": "${blockNameInput}",
-  "description": "A custom ACF block",
+  "description": "A custom block",
   "style": [
-    "file:./${blockName}.scss"
+    "file:./${blockName}.min.css"
   ],
   "category": "formatting",
   "icon": {

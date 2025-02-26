@@ -6,8 +6,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="da-DK" xml:lang="da-DK">
 <?php } ?>
 
-    <?php include('header.php'); ?>
+<?php include('header.php'); ?>
+<div class="blocks-container">
     <?php the_content(); ?>
-    <?php include('footer.php'); ?>
+</div>
+<?php include('footer.php'); ?>
 
 </html>

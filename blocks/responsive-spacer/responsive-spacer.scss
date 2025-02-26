@@ -1,0 +1,15 @@
+@import '../../css/src/general/mixins';
+
+.responsive-spacer {
+  visibility: hidden;
+  width: 100%;
+  height: var(--mobile-height);
+
+  @include responsive(medium) {
+    height: var(--tablet-height);
+  }
+
+  @include responsive(large) {
+    height: var(--desktop-height);
+  }
+}

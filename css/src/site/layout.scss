@@ -18,6 +18,54 @@ body {
   color: var(--color-text);
 }
 
+.blocks-container {
+  > p,
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6,
+  > ul,
+  > ol,
+  > blockquote,
+  > pre,
+  > table,
+  > dl,
+  > figure,
+  > form {
+    // width: var(--wp--style--global--content-size);
+    width: var(--content-width);
+  }
+
+  > :is(h1, h2, h3, h4, h5, h6) {
+    margin-bottom: 0;
+    margin-top: 1.45em;
+  }
+
+  > p {
+    margin-top: 0.5em;
+  }
+
+  > * {
+    width: var(--content-width);
+    margin-left: auto !important;
+    margin-right: auto !important;
+    position: relative;
+
+    &.alignwide {
+      width: var(--content-width-wide);
+    }
+    &.alignfull {
+      width: var(--content-width-full);
+    }
+  }
+
+  .wp-block-button {
+    margin-top: 2rem;
+  }
+}
+
 .animate {
   transform: translateY(1rem);
   animation: animateUp 500ms ease-in-out forwards;
