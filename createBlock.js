@@ -46,13 +46,14 @@ function slugify(text) {
          * Block: ${blockNameInput}
          */
             $id = isset($block['anchor']) && $block['anchor'] ? $block['anchor'] : $block['id'];
-            $classes = '';
+
+            $wrapper_attributes = get_block_wrapper_attributes([
+            'id' => $id,
+            'class' => 'block ${blockName}',
+          ]);
             
-            if($block['align']) {
-              $classes .= ' align' . $block['align'];
-            }
         ?>
-        <div class="block ${blockName} <?= $classes; ?>" id="<?= $id; ?>" <?= get_block_wrapper_attributes(); ?>>
+        <div <?= get_block_wrapper_attributes(); ?>>
           <!-- Block content goes here -->
         </div>
 `
@@ -74,6 +75,9 @@ function slugify(text) {
   "title": "${blockNameInput}",
   "description": "A custom block",
   "style": [
+    "file:./${blockName}.min.css"
+  ],
+  "editorStyle": [
     "file:./${blockName}.min.css"
   ],
   "category": "theme",

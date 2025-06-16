@@ -8,7 +8,7 @@
     "dist": "webpack --mode production",
     "watch": "webpack --watch --mode development",
     "deploy": "node deploy",
-    "createblock": "node createBlock.js"
+    "new-block": "node createBlock.js"
   },
   "repository": {
     "type": "git",
