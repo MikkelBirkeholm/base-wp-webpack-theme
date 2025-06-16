@@ -16,7 +16,8 @@
 - The block will be created in the `/blocks` directory
 - A minified version of the scss file will be created in the block directory on build
 - Editor styles are automatically enqueued with "editorStyle" in `block.json`
-- Javascript enqueueing is still WIP
+- Javascript enqueueing: Add scripts in the `js/src`
+  -- In the `js/src/components` directory, you should add javascript related to blocks. Give the file a name that matches the block name, e.g., `my-block.js`.
 
 ## BrowserSync
 
