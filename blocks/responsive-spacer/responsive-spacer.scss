@@ -1,4 +1,4 @@
-@import '../../css/src/general/mixins';
+@use '../../css/src/general/mixins' as *;
 
 .responsive-spacer {
   visibility: hidden;

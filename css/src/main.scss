@@ -1,19 +1,19 @@
-@import './general/reset';
+@use 'general/reset';
 
 // variables
-@import './general/variables';
-@import './general/mixins';
+@use 'general/variables';
+@use 'general/mixins';
 
 // layout and structure
-@import './site/layout';
-@import './site/navigation';
-@import './site/header';
-@import './site/buttons';
-@import './site/typography';
-@import './site/footer';
+@use 'site/layout';
+@use 'site/navigation';
+@use 'site/header';
+@use 'site/buttons';
+@use 'site/typography';
+@use 'site/footer';
 
 // main content pane styles
-@import './components/content';
+@use 'components/content';
 
 // editor
-@import './editor';
+@use 'editor';

@@ -1,3 +1,6 @@
+@use 'sass:map';
+@use 'sass:meta';
+
 @mixin media($breakpoint) {
   @media screen and (max-width: $breakpoint) {
     @content;
@@ -31,9 +34,9 @@ $breakpoints: (
 
 @mixin responsive($name) {
   // If the key exists in the map
-  @if map-has-key($breakpoints, $name) {
+  @if map.has-key($breakpoints, $name) {
     // Prints a media query based on the value
-    @media #{inspect(map-get($breakpoints, $name))} {
+    @media #{meta.inspect(map.get($breakpoints, $name))} {
       @content;
     }
   }

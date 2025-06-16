@@ -5,24 +5,25 @@ add_action('acf/init', function () {
 }, 1); // Priority set to 1 for early execution
 
 // register webpack compiled js and css with theme
-  function enqueue_webpack_scripts() {
-    
-    $cssFilePath = glob( get_template_directory() . '/css/build/main.min.css' );
+function enqueue_webpack_scripts()
+{
+
+    $cssFilePath = glob(get_template_directory() . '/css/build/main.min.css');
     $cssFileURI = get_template_directory_uri() . '/css/build/' . basename($cssFilePath[0]);
-    wp_enqueue_style( 'main_css', $cssFileURI );
-    
-    $jsFilePath = glob( get_template_directory() . '/js/build/main.min.js' );
+    wp_enqueue_style('main_css', $cssFileURI);
+
+    $jsFilePath = glob(get_template_directory() . '/js/build/main.min.js');
     $jsFileURI = get_template_directory_uri() . '/js/build/' . basename($jsFilePath[0]);
-    wp_enqueue_script( 'main_js', $jsFileURI , null , null , true );
-     
-  }
-  add_action( 'wp_enqueue_scripts', 'enqueue_webpack_scripts' );
+    wp_enqueue_script('main_js', $jsFileURI, null, null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_webpack_scripts');
 
-  add_filter('show_admin_bar', 'is_blog_admin'); // Remove admin bar from front end
+add_filter('show_admin_bar', 'is_blog_admin'); // Remove admin bar from front end
 
-  // Check blocks recursively
+// Check blocks recursively
 if (!function_exists('check_blocks_recursive')) {
-    function check_blocks_recursive($blocks, $block_directories) {
+    function check_blocks_recursive($blocks, $block_directories)
+    {
         $found_blocks = [];
 
         foreach ($blocks as $block) {
@@ -62,7 +63,8 @@ if (!function_exists('check_blocks_recursive')) {
     }
 }
 
-function enqueue_block_styles() {
+function enqueue_block_styles()
+{
     global $post;
 
     if (!$post) {
@@ -95,7 +97,8 @@ function enqueue_block_styles() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_block_styles');
 
-function enqueue_block_scripts() {
+function enqueue_block_scripts()
+{
     global $post;
 
     if (!$post) {
@@ -131,30 +134,29 @@ function enqueue_block_scripts() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_block_scripts');
 
- 
-  
-  // Enqueue editor styles
-function enqueue_block_editor_styles() {
+
+
+// Enqueue editor styles
+function enqueue_block_editor_styles()
+{
     // Dynamically find all block CSS files
-    $block_directories = glob( get_template_directory() . '/css/build/*.css' );
+    $block_directories = glob(get_template_directory() . '/css/build/*.css');
 
-    // $editor_styles = glob( get_template_directory() . '/css/editor.scss' );
+    wp_enqueue_style('editor_css', get_template_directory_uri() . '/editor.css', false, '1.2', 'all');
 
-    // // Enqueue the editor styles
-    // wp_enqueue_style( 'block_editor_css', get_template_directory_uri() . '/css/editor.scss', false, '1.0', 'all' );
-    
-    foreach ( $block_directories as $block_css_file ) {
-        $block_name = basename( $block_css_file, '.css' );
-        $cssFileURI = get_template_directory_uri() . '/css/build/' . basename( $block_css_file );
-        
+    foreach ($block_directories as $block_css_file) {
+        $block_name = basename($block_css_file, '.css');
+        $cssFileURI = get_template_directory_uri() . '/css/build/' . basename($block_css_file);
+
         // Enqueue each block's CSS for the editor
-        wp_enqueue_style( 'block_editor_css_' . $block_name, $cssFileURI );
+        wp_enqueue_style('block_editor_css_' . $block_name, $cssFileURI);
     }
 }
-add_action( 'enqueue_block_editor_assets', 'enqueue_block_editor_styles' );
+add_action('enqueue_block_editor_assets', 'enqueue_block_editor_styles');
 
 
 add_action('wp_enqueue_scripts', 'custom_localize_ajax_url');
-function custom_localize_ajax_url() {
+function custom_localize_ajax_url()
+{
     wp_localize_script('jquery', 'ajax_params', array('ajax_url' => admin_url('admin-ajax.php'))); // 'jquery' is used to ensure it attaches to a script that definitely exists.
 }

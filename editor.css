@@ -1,0 +1,38 @@
+:root {
+  --content-width: clamp(20px, var(--wp--style--global--content-size), 90vw);
+  --content-width-wide: clamp(20px, var(--wp--style--global--wide-size), 90vw);
+  --content-width-full: clamp(20px, 100%, 100vw);
+}
+
+.block-editor .wp-block-acf-responsive-spacer {
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.03);
+}
+.block-editor .wp-block-acf-responsive-spacer:after {
+  content: 'Responsive Spacer';
+}
+
+.edit-post-visual-editor__post-title-wrapper h1 {
+  white-space: pre-wrap;
+  min-width: 1px;
+  font-size: 15px;
+  background: #f5f5f5;
+  color: #222;
+  padding: 20px;
+  font-weight: normal;
+  position: relative;
+}
+.edit-post-visual-editor__post-title-wrapper h1::before {
+  content: 'Internal title';
+  position: absolute;
+  font-size: 9px;
+  line-height: 14px;
+  background-color: #111;
+  color: #ccc;
+  text-transform: uppercase;
+  top: -7px;
+  display: block;
+  letter-spacing: 2px;
+  padding: 0 5px;
+  font-weight: normal;
+}
