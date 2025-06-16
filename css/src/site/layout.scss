@@ -47,19 +47,19 @@ body {
     margin-top: 0.5em;
   }
 
-  > * {
-    width: var(--content-width);
-    margin-left: auto !important;
-    margin-right: auto !important;
-    position: relative;
+  // > * {
+  //   width: var(--content-width);
+  //   margin-left: auto !important;
+  //   margin-right: auto !important;
+  //   position: relative;
 
-    &.alignwide {
-      width: var(--content-width-wide);
-    }
-    &.alignfull {
-      width: var(--content-width-full);
-    }
-  }
+  //   &.alignwide {
+  //     width: var(--content-width-wide);
+  //   }
+  //   &.alignfull {
+  //     width: var(--content-width-full);
+  //   }
+  // }
 
   .wp-block-button {
     margin-top: 2rem;

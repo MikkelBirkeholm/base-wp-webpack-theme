@@ -9,10 +9,12 @@
 
 - Run `npm run new-block` to create a new block
 - Follow the prompts to set up your block
+- Blocks are automatically registered in `blocks.php`
 
 #### About the block
 
 - The block will be created in the `/blocks` directory
+- A minified version of the scss file will be created in the block directory on build
 - Editor styles are automatically enqueued with "editorStyle" in `block.json`
 - Javascript enqueueing is still WIP
 

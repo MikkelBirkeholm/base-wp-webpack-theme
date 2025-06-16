@@ -1,14 +1,40 @@
 @use 'general/mixins';
 
-.block-editor {
-  // Spacing controller
-
+.editor-styles-wrapper {
   .wp-block-acf-responsive-spacer {
     border: 2px solid rgba(0, 0, 0, 0.5);
     background: rgba(0, 0, 0, 0.03);
+    position: relative;
 
-    &:after {
+    &:before {
       content: 'Responsive Spacer';
+      font-family: 'Arial', sans-serif;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      height: 20px;
+      opacity: 0.2;
+      transition: opacity 0.2s;
+    }
+  }
+}
+
+.block-editor {
+  // Spacing controller
+
+  .block {
+    width: var(--content-width);
+    margin-left: auto !important;
+    margin-right: auto !important;
+    position: relative;
+
+    &.alignwide {
+      width: var(--content-width-wide);
+    }
+    &.alignfull {
+      width: var(--content-width-full);
     }
   }
 

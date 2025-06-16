@@ -7,7 +7,6 @@ add_action('acf/init', function () {
 // register webpack compiled js and css with theme
 function enqueue_webpack_scripts()
 {
-
     $cssFilePath = glob(get_template_directory() . '/css/build/main.min.css');
     $cssFileURI = get_template_directory_uri() . '/css/build/' . basename($cssFilePath[0]);
     wp_enqueue_style('main_css', $cssFileURI);
@@ -140,17 +139,29 @@ add_action('wp_enqueue_scripts', 'enqueue_block_scripts');
 function enqueue_block_editor_styles()
 {
     // Dynamically find all block CSS files
-    $block_directories = glob(get_template_directory() . '/css/build/*.css');
+    // $block_directories = glob(get_template_directory() . '/css/build/*.css');
 
-    wp_enqueue_style('editor_css', get_template_directory_uri() . '/editor.css', false, '1.2', 'all');
+    // wp_enqueue_style('editor_css', get_template_directory_uri() . '/editor.css', false, '1.2', 'all');
+    // add_editor_style('css/build/editor.min.css');
 
-    foreach ($block_directories as $block_css_file) {
-        $block_name = basename($block_css_file, '.css');
-        $cssFileURI = get_template_directory_uri() . '/css/build/' . basename($block_css_file);
-
-        // Enqueue each block's CSS for the editor
-        wp_enqueue_style('block_editor_css_' . $block_name, $cssFileURI);
+    $editorCssFile = get_template_directory() . '/css/build/editor.min.css';
+    if (file_exists($editorCssFile)) {
+        wp_enqueue_style(
+            'editor_css',
+            get_template_directory_uri() . '/css/build/editor.min.css',
+            false,
+            filemtime($editorCssFile), // Use file modification time for cache busting
+            'all'
+        );
     }
+
+    // foreach ($block_directories as $block_css_file) {
+    //     $block_name = basename($block_css_file, '.css');
+    //     $cssFileURI = get_template_directory_uri() . '/css/build/' . basename($block_css_file);
+
+    //     // Enqueue each block's CSS for the editor
+    //     wp_enqueue_style('block_editor_css_' . $block_name, $cssFileURI);
+    // }
 }
 add_action('enqueue_block_editor_assets', 'enqueue_block_editor_styles');
 

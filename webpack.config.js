@@ -39,6 +39,7 @@ const siteEntries = siteJSFiles.reduce((acc, file) => {
 export default {
   entry: {
     main: ['./js/src/main.js', './css/src/main.scss'],
+    editor: './css/src/editor.scss',
     ...scssEntries,
     ...jsEntries,
     ...siteEntries,
